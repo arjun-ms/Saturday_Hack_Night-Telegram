@@ -1,6 +1,5 @@
 
-
-![](./logo.png =250x)
+<img src="Assets/icon.png" width="200">
 
 <br>
 
