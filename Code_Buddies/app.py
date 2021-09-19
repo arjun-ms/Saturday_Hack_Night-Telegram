@@ -16,7 +16,7 @@ def send_welcome(message):
     try:
         bot.send_chat_action(message.chat.id, "typing")
         strtMsg = f'''
-		Hey [{message.from_user.first_name} {message.from_user.last_name}](tg://user?id={message.chat.id})! This bot will helps you to do many things with pdf's 🥳
+		Hey [{message.from_user.first_name}](tg://user?id={message.chat.id})! This bot will helps you to do many things with pdf's 🥳
 		Some of the main features are:
 		◍ Convert images to PDF
 		'''
