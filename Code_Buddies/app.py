@@ -27,3 +27,39 @@ Some of the main features are:
 	except:
 		pass
 
+
+
+@bot.callback_query_handler(func=lambda call: call.data)
+def strtMsgEdt(call):
+	edit = call.data
+	
+	if edit == 'strtDevEdt':
+		
+		try:
+			key = types.InlineKeyboardMarkup()
+			key.add(types.InlineKeyboardButton("Home 🏡", callback_data="back"))
+			bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, disable_web_page_preview=True, reply_markup=key)
+		
+		except:
+			pass
+		
+	elif edit == 'imgsToPdfEdit':
+		
+		try:
+			expMsg = f'''
+Images to pdf :
+
+		Just Send/forward me some images. When you are finished; use /generate to get your pdf..
+
+ ◍ Image Sequence will be considered 
+ ◍ For better quality pdfs(send images without Compression) 
+ 
+ ◍ `/cancel` - Delete's the current Queue 
+ ◍ `/id` - to get your telegram ID 
+ '''
+			key = types.InlineKeyboardMarkup()
+			key.add(types.InlineKeyboardButton("Home 🏡", callback_data="back"),types.InlineKeyboardButton("PDF to images ➡️", callback_data="pdfToImgsEdit"))
+			bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text = expMsg, disable_web_page_preview=True, reply_markup=key)
+		
+		except:
+			pass
