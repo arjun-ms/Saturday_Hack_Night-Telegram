@@ -1,5 +1,5 @@
 
-<img src="Assets/icon.png" width="200">
+<img src="./logo.png" width="200">
 
 <br>
 
