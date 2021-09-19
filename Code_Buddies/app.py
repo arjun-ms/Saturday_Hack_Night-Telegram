@@ -19,9 +19,10 @@ Hey [{message.from_user.first_name}](tg://user?id={message.chat.id})..!! This bo
 
 Some of the main features are:
 ◍ `Convert images to PDF``
+
 '''
 		key = types.InlineKeyboardMarkup()
-		key.add(types.InlineKeyboardButton("Source Code ❤️", callback_data="strtDevEdt"),types.InlineKeyboardButton("Explore More 🥳", callback_data="imgsToPdfEdit"))
+		key.add(types.InlineKeyboardButton("Source Code ❤️", callback_data="strtDevEdt"),types.InlineKeyboardButton("Explore More 🔍", callback_data="imgsToPdfEdit"))
 		bot.send_message(message.chat.id, strtMsg, disable_web_page_preview=True, reply_markup=key)
 	
 	except:
@@ -36,6 +37,14 @@ def strtMsgEdt(call):
 	if edit == 'strtDevEdt':
 		
 		try:
+			aboutDev = f'''
+
+Lang Used: Python🐍
+[Source Code](https://github.com/)
+
+if you ❤ this, Star this repo
+
+'''
 			key = types.InlineKeyboardMarkup()
 			key.add(types.InlineKeyboardButton("Home 🏡", callback_data="back"))
 			bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, disable_web_page_preview=True, reply_markup=key)
@@ -58,8 +67,62 @@ Images to pdf :
  ◍ `/id` - to get your telegram ID 
  '''
 			key = types.InlineKeyboardMarkup()
-			key.add(types.InlineKeyboardButton("Home 🏡", callback_data="back"),types.InlineKeyboardButton("PDF to images ➡️", callback_data="pdfToImgsEdit"))
+			key.add(types.InlineKeyboardButton("Home 🏡", callback_data="back"),types.InlineKeyboardButton("PDF to Images ➡️", callback_data="pdfToImgsEdit"))
 			bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text = expMsg, disable_web_page_preview=True, reply_markup=key)
 		
 		except:
 			pass
+
+	elif edit == 'Warning':
+			
+			try:
+				expMsg = f'''
+	WARNING MESSAGE ⚠️:
+
+	◍ This bot is completely free to use so please dont spam here 
+
+	◍ Please don't try to spread 18+ contents 
+	'''
+				key = types.InlineKeyboardMarkup()
+				key.add(types.InlineKeyboardButton("WARNING ⚠️", callback_data="Warning"),types.InlineKeyboardButton("Home 🏡", callback_data="back"))
+				bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text = expMsg, disable_web_page_preview=True, reply_markup=key)
+			
+			except:
+				pass
+
+
+	elif edit == 'close':
+		try:
+			bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+		except:
+			pass
+
+@bot.message_handler(commands=["id"])
+def UsrId(message):
+	bot.send_chat_action(message.chat.id, "typing")
+	bot.send_message(message.chat.id, f'Your ID - `{message.chat.id}`')
+
+@bot.message_handler(commands=["help"])
+def hlp(message):
+	try:
+		bot.send_chat_action(message.chat.id, "typing")
+		hlpMsg = f'''
+Help message:
+
+ ◍ Hit on /start to get the welcome message
+
+ ◍ Then Use `Explore more 🥳` button for more help
+
+'''
+		key = types.InlineKeyboardMarkup()
+		key.add(types.InlineKeyboardButton("Close ⌛", callback_data="close"))
+		bot.send_message(message.chat.id, hlpMsg, disable_web_page_preview=True, reply_markup=key)
+	
+	except:
+		pass
+
+
+
+
+
+bot.polling()
