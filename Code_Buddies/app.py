@@ -6,9 +6,6 @@ from PIL import Image
 import shutil
 from time import sleep
 import fitz
-from dotenv import load_dotenv
-load_dotenv()
-
 
 API_TOKEN = os.getenv("API_KEY")
 bot = telebot.TeleBot(API_TOKEN, parse_mode="Markdown")
