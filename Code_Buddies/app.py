@@ -40,6 +40,10 @@ def strtMsgEdt(call):
 			Lang Used: Python🐍
 			[Source Code](https://github.com/arjun-ms/Saturday_Hack_Night-Telegram/tree/main/Code_Buddies)
 			if you ❤ this, Star this repo
+			Created By:
+			Muhammed Ajmal M
+			Arjun M S
+			Sidharth Punathil
 			'''
 			key = types.InlineKeyboardMarkup()
 			key.add(types.InlineKeyboardButton("🔙 Home 🏡", callback_data="back"))
