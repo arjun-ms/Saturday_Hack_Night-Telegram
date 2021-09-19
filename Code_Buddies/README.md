@@ -1,10 +1,5 @@
-
-<<<<<<< HEAD
-
-[<img src="https://img-premium.flaticon.com/png/512/202/premium/202298.png" width="100"/>](https://img-premium.flaticon.com/png/512/202/premium/202298.png?token=exp=1632021925~hmac=8db13c19ab0e8b5722acc9724c08f695)
-=======
 <img src="./logo.png" width="200" align="middle">
->>>>>>> d7eb3436c0f9a88b616fd692175ce5970c83b5f8
+
 
 <br>
 
