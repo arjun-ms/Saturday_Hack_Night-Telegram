@@ -6,8 +6,7 @@
 # PDF to IMAGE Converter Bot 
 
 A Telegram bot to convert Images to PDF.
-<br>
-<br>
+![Click here](https://t.me/imgpdfconverter_bot)
 
 ## Authors
 
